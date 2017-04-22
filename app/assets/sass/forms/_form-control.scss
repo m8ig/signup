@@ -1,0 +1,25 @@
+// form-control
+.form-control {
+  @include box-shadow(none);
+  border-width: 0 0 1px;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+
+
+// label
+label {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+
+// autofill form-control
+.form-control:-webkit-autofill {
+  @include transition(background-color 5000s ease-in-out 0s);
+  -webkit-box-shadow: 0 0 0 1000px $white inset;
+}

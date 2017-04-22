@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Star";
+  src: url("../fonts/sos.eot");
+  src: url("../fonts/sos.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/sos.woff") format("woff"),
+       url("../fonts/sos.ttf") format("truetype"),
+       url("../fonts/sos.svg#sos") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// fa
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 Star;
+  font-size: inherit;
+  text-rendering: auto;
+  vertical-align: sub;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// fa-fw
+.fa-fw {
+  text-align: center;
+  width: 1.5em;
+}
+
+
+// fa-*
+.fa-arrow-left:before {
+  content: "\e000";
+}
+.fa-arrow-down:before {
+  content: "\e001";
+}
+.fa-check-circle:before {
+  content: "\e002";
+}

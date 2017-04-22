@@ -1,0 +1,39 @@
+// layer
+@mixin layer($top, $right, $bottom, $left, $z-index) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+
+// layer-fixed
+@mixin layer-fixed($top, $right, $bottom, $left, $z-index) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+
+// disable text select
+@mixin noselect() {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+
+// appearance
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+          appearance: $value;
+}

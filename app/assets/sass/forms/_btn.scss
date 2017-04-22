@@ -1,0 +1,38 @@
+// button
+button:focus {outline:0!important;}
+
+
+// btn
+.btn {
+  @include transition(all .3s ease 0s);
+  font-style: normal;
+  position: relative;
+  overflow: hidden;
+  outline: 0 none !important;
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+
+
+//== Colors
+//
+// btn-transparent
+.btn-transparent {
+  background-color: transparent;
+  border-color: $white;
+  color: $white;
+
+  &:focus {
+    color: $white;
+  }
+  &:hover,
+  &:active,
+  &.active {
+    background-color: $white;
+    border-color: $white;
+    color: $body-bg;
+  }
+}
