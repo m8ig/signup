@@ -1,4 +1,5 @@
-var path = require("path");
+var path    = require("path");
+var webpack = require("webpack");
 var HtmlWebpackPlugin  = require("html-webpack-plugin");
 var ExtractTextPlugin  = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -36,7 +37,12 @@ module.exports = {
             {
               loader: "sass-loader",
               options: {
-                includePaths: ["node_modules/bootstrap-sass/assets/stylesheets/", "node_modules/sass-flex-mixin/"],
+                includePaths: [
+                  "node_modules/bootstrap-sass/assets/stylesheets/",
+                  "node_modules/bootstrap-select/sass/",
+                  "node_modules/sass-flex-mixin/"
+                ],
+                precision: 8,
                 sourceMap: true
               }
             }
@@ -59,19 +65,20 @@ module.exports = {
     extensions: [".js", ".jsx", ".css", ".scss"],
   },
 
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
-
   devServer: {
     contentBase: path.join(__dirname, "./docs")
   },
 
   plugins: [
+    new webpack.ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom",
+      jQuery: "jquery",
+      $: "jquery"
+    }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./app/index.ejs"),
       filename: "./index.html",
+      template: "./app/template.ejs",
       title: "StarOfService"
     }),
     new ExtractTextPlugin("./css/app.css"),
