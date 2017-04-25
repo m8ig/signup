@@ -1,0 +1,14 @@
+// caret
+.caret {
+  .bs-caret > & {
+    @extend .fa;
+    @extend .fa-arrow-down;
+    color: $brand-primary;
+    width: auto;
+    height: auto;
+    border: none;
+  }
+  .bootstrap-select.btn-group .dropdown-toggle & {
+    margin-top: -7px;
+  }
+}

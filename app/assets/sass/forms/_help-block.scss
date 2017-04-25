@@ -1,0 +1,13 @@
+// help-block
+.help-block {
+  margin: 5px 0;
+  color: $text-color;
+}
+
+
+// header as help-block
+h5.help-block {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: $line-height-computed;
+}

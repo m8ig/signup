@@ -6,33 +6,86 @@ button:focus {outline:0!important;}
 .btn {
   @include transition(all .3s ease 0s);
   font-style: normal;
+  letter-spacing: -.3px;
   position: relative;
   overflow: hidden;
   outline: 0 none !important;
 
-  &:active {
-    text-decoration: none;
+  .fa {
+    margin-left: 2px;
+    margin-bottom: 2px;
   }
 }
 
 
+// btn-link
+.btn-link {
+  font-weight: $btn-font-weight;
+  padding: 0;
+}
 
-//== Colors
-//
-// btn-transparent
-.btn-transparent {
+
+// btn-default
+.btn-default,
+.open > .btn-default {
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    background: darken($btn-default-bg, 5%) !important;
+  }
+}
+
+
+// btn-back
+.btn-back {
+  @include box-shadow(none);
   background-color: transparent;
-  border-color: $white;
-  color: $white;
+  border-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  color: $gray;
+
+  &:hover,
+  &:active,
+  &.active {
+    color: darken($gray, 30%);
+  }
+}
+
+
+// btn-white
+.btn-white {
+  background-color: $white;
+  border-color: $brand-primary;
+  color: $brand-primary;
 
   &:focus {
-    color: $white;
+    color: $brand-primary;
   }
   &:hover,
   &:active,
   &.active {
-    background-color: $white;
-    border-color: $white;
-    color: $body-bg;
+    background-color: $brand-primary;
+    color: $white;
+  }
+}
+
+
+// btn-transparent
+.btn-transparent {
+  background-color: $white;
+  border-color: $input-border;
+  color: $text-color;
+
+  &:focus {
+    color: $text-color;
+  }
+  &:hover,
+  &:active,
+  &.active {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: $white;
   }
 }

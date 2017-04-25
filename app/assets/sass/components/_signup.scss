@@ -1,53 +1,11 @@
 // signup
 .signup {
-}
+  max-width: 450px;
+  margin: 15px auto;
+  padding: 0 15px;
 
-
-//exchange bg
-.exchange__bg {
-  @include flex-shrink(0);
-  position: relative;
-}
-
-
-// exchange bg-light
-.exchange__bg-light {
-  &::after {
-    @include layer(100%, auto, auto, 50%, 1);
-    content: '';
-    border: solid 16px transparent;
-    border-top-color: $brand-primary;
-    height: 0;
-    margin-left: -16px;
-  }
-  .btn-custom {
-    @extend .btn-primary;
-  }
-}
-
-
-// exchange bg-dark
-.exchange__bg-dark {
-  background: $brand-info;
-
-  .btn-custom {
-    @extend .btn-info;
-  }
-}
-
-
-// exchange addon
-.exchange__addon {
-  .exchange__group > & {
-    padding-left: 0;
-  }
-}
-
-
-// exchange input
-.exchange__input {
-  .exchange__group > & {
-    padding-right: 0;
-    text-align: right;
+  @media (min-width: $screen-sm) {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }

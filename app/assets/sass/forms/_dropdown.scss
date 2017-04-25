@@ -1,0 +1,9 @@
+// dropdown-menu
+.dropdown-menu {
+  > .selected {
+    > a {
+      background: $dropdown-link-active-bg;
+      color: $dropdown-link-active-color;
+    }
+  }
+}

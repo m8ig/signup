@@ -1,0 +1,8 @@
+// dropdown-toggle
+.dropdown-toggle {
+  .bootstrap-select & {
+    &:focus {
+      outline:0!important;
+    }
+  }
+}

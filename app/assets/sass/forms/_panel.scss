@@ -1,5 +1,40 @@
+// panel
+.panel {
+  margin-bottom: 0;
+}
+
+
+// panel-heading
+.panel-heading {
+  border-bottom: 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 23px 25px;
+  }
+}
+
+
+// panel-title
+.panel-title {
+  font-size: $font-size-h3;
+}
+
+
 // panel-body
 .panel-body {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @media (min-width: $screen-sm) {
+    padding: 80px 25px;
+  }
+}
+
+
+// panel-footer
+.panel-footer {
+  @include flexbox();
+  @include flex-direction(row-reverse);
+  @include justify-content(space-between);
+
+  @media (min-width: $screen-sm) {
+    padding: 23px 25px;
+  }
 }

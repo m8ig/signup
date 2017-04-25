@@ -10,13 +10,13 @@ $bootstrap-sass-asset-helper: false !default;
 $white:                 #ffffff !default;
 $gray-base:             #000000 !default;
 $gray-darker:           lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:             lighten($gray-base, 20%) !default;   // #333
-$gray:                  lighten($gray-base, 33.5%) !default; // #555
+$gray-dark:             #5c5c5c !default;   // #333
+$gray:                  #afafaf !default;
 $gray-light:            lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:          lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:         #498fe1 !default;
-$brand-success:         #5cb85c !default;
+$brand-success:         #b7e886 !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #e64242 !default;
@@ -29,12 +29,13 @@ $brand-danger:          #e64242 !default;
 //** Background color for `<body>`.
 $body-bg:               #ffffff !default;
 //** Global text color on `<body>`.
-$text-color:            #5c5c5c !default;
+$text-color:            $gray-dark !default;
+$text-font-weight:      400 !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      darken($link-color, 30%) !default;
 //** Link hover decoration.
 $link-hover-decoration: none !default;
 
@@ -50,15 +51,15 @@ $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !def
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-large:         18px !default; // ~18px
+$font-size-small:         10px !default; // ~12px
 
-$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h1:            36px !default; // ~36px
+$font-size-h2:            30px !default; // ~30px
+$font-size-h3:            22px !default; // ~24px
+$font-size-h4:            18px !default; // ~18px
 $font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h6:            12px !default; // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
@@ -92,11 +93,11 @@ $icon-font-svg-id:        "glyphicons_halflingsregular" !default;
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-$padding-base-vertical:     6px !default;
-$padding-base-horizontal:   20px !default;
+$padding-base-vertical:     12px !default;
+$padding-base-horizontal:   12px !default;
 
-$padding-large-vertical:    3px !default;
-$padding-large-horizontal:  20px !default;
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  12px !default;
 
 $padding-small-vertical:    5px !default;
 $padding-small-horizontal:  10px !default;
@@ -104,11 +105,11 @@ $padding-small-horizontal:  10px !default;
 $padding-xs-vertical:       1px !default;
 $padding-xs-horizontal:     5px !default;
 
-$line-height-large:         1 !default; // extra decimals for Win 8.1 Chrome
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        6px !default;
-$border-radius-large:       6px !default;
+$border-radius-base:        4px !default;
+$border-radius-large:       4px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -147,11 +148,11 @@ $table-border-color:            #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                400 !default;
+$btn-font-weight:                $text-font-weight !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+$btn-default-color:              $text-color !default;
+$btn-default-bg:                 #ffffff !default;
+$btn-default-border:             #cccccc !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -176,7 +177,7 @@ $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 $btn-link-disabled-color:        $gray-light !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:         25px !default;
+$btn-border-radius-base:         $border-radius-base !default;
 $btn-border-radius-large:        $border-radius-large !default;
 $btn-border-radius-small:        $border-radius-small !default;
 
@@ -193,22 +194,22 @@ $input-bg-disabled:              $gray-lighter !default;
 //** Text color for `<input>`s
 $input-color:                    $text-color !default;
 //** `<input>` border color
-$input-border:                   #cacaca !default;
+$input-border:                   #cccccc !default;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
-$input-border-radius:            0 !default;
+$input-border-radius:            $border-radius-base !default;
 //** Large `.form-control` border radius
-$input-border-radius-large:      0 !default;
+$input-border-radius-large:      $border-radius-large !default;
 //** Small `.form-control` border radius
-$input-border-radius-small:      0 !default;
+$input-border-radius-small:      $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus:             #cacaca !default;
+$input-border-focus:             darken($input-border, 30%) !default;
 
 //** Placeholder text color
-$input-color-placeholder:        #83c4f6 !default;
+$input-color-placeholder:        #cccccc !default;
 
 //** Default `.form-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
@@ -218,7 +219,7 @@ $input-height-large:             (ceil($font-size-large * $line-height-large) + 
 $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
 
 //** `.form-group` margin
-$form-group-margin-bottom:       35px !default;
+$form-group-margin-bottom:       25px !default;
 
 $legend-color:                   $gray-dark !default;
 $legend-border-color:            #e5e5e5 !default;
@@ -513,7 +514,7 @@ $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
-$state-danger-text:              #a94442 !default;
+$state-danger-text:              $brand-danger !default;
 $state-danger-bg:                #f2dede !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
@@ -651,7 +652,7 @@ $alert-danger-border:         $state-danger-border !default;
 //##
 
 //** Background color of the whole progress component
-$progress-bg:                 #f5f5f5 !default;
+$progress-bg:                 #ffffff !default;
 //** Progress bar text color
 $progress-bar-color:          #ffffff !default;
 //** Variable for setting rounded corners on progress bar.
@@ -708,13 +709,13 @@ $list-group-link-heading-color: #333 !default;
 //##
 
 $panel-bg:                    #ffffff !default;
-$panel-body-padding:          15px !default;
-$panel-heading-padding:       10px 15px !default;
+$panel-body-padding:          40px 15px !default;
+$panel-heading-padding:       23px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
-$panel-border-radius:         $border-radius-base !default;
+$panel-border-radius:         10px !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          #c3c3c3 !default;
+$panel-inner-border:          #cccccc !default;
 $panel-footer-bg:             #ffffff !default;
 
 $panel-default-text:          $gray-dark !default;
@@ -722,7 +723,7 @@ $panel-default-border:        #ddd !default;
 $panel-default-heading-bg:    #f5f5f5 !default;
 
 $panel-primary-text:          $brand-primary !default;
-$panel-primary-border:        #c3c3c3 !default;
+$panel-primary-border:        #cccccc !default;
 $panel-primary-heading-bg:    transparent !default;
 
 $panel-success-text:          $state-success-text !default;

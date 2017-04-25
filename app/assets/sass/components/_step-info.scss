@@ -1,0 +1,35 @@
+// step-info
+.step-info {
+}
+
+
+// step-info date
+.step-info__date {
+  margin-bottom: 35px;
+
+  .form-control {
+    text-align: center;
+    width: 33.33333%;
+
+    & + .form-control {
+      margin-left: -1px;
+    }
+  }
+}
+
+
+// step-info gender
+.step-info__gender {
+  margin-bottom: 40px;
+
+  .btn {
+    font-size: $font-size-small;
+
+    @media (min-width: $screen-xs) {
+      font-size: $font-size-base;
+    }
+    & + .btn {
+      border-left-width: 0;
+    }
+  }
+}

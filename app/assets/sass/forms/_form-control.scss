@@ -1,9 +1,6 @@
 // form-control
 .form-control {
   @include box-shadow(none);
-  border-width: 0 0 1px;
-  padding-left: 0;
-  padding-right: 0;
 
   &:focus {
     @include box-shadow(none);
@@ -11,10 +8,35 @@
 }
 
 
-// label
-label {
-  font-weight: 300;
-  text-transform: uppercase;
+// form-control-simple
+.form-control-simple {
+  border-color: transparent transparent $input-border;
+  border-radius: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+
+  &:focus {
+    border-color: transparent transparent $input-border-focus;
+  }
+  .has-error & {
+    @include box-shadow(none);
+    border-color: transparent transparent $brand-danger;
+
+    &:focus {
+      @include box-shadow(none);
+      border-color: transparent transparent darken($brand-danger, 30%);
+    }
+  }
+}
+
+
+// type number
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 
@@ -22,4 +44,11 @@ label {
 .form-control:-webkit-autofill {
   @include transition(background-color 5000s ease-in-out 0s);
   -webkit-box-shadow: 0 0 0 1000px $white inset;
+}
+
+
+// label
+label {
+  font-weight: 300;
+  text-transform: uppercase;
 }
