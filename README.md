@@ -1,2 +1,2 @@
 # Simple signup app
-https://m8ig.github.io/signup/
+https://m8ig.github.io/signup-app/
